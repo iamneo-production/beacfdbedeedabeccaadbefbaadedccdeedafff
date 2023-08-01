@@ -55,24 +55,45 @@ public class MainController extends HttpServlet {
 	//Dont change the above lines of code
 	
 //	Start Enterinng your code here...
-
-private static int calculate(String myName, String friendName) {
-		return 0;
-	}
-public static int findSum(int[] numbers) {
+public static int findSum(int num) {
 	int sum = 0;
-	for (int number : numbers) {
-	  sum += number;
+	for (int i = 1; i <= num; i++) {
+		sum += i;
 	}
 	return sum;
-  }
-
-public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	String myName = sc.nextLine();
-	String friendName = sc.nextLine();
-	int frendshipPercent = calculate(myName, friendName);
-	System.out.println(frendshipPercent);
+}
 
 
-}}
+    public static int calculate(String person1, String person2) {
+        String combinedNames = person1.toUpperCase() + person2.toUpperCase();
+        int countF = 0;
+        int countR = 0;
+        int countI = 0;
+        int countE = 0;
+        int countN = 0;
+        int countD = 0;
+        int countS = 0;
+
+        for (int i = 0; i < combinedNames.length(); i++) {
+            char c = combinedNames.charAt(i);
+            if (c == 'F') {
+                countF++;
+            } else if (c == 'R') {
+                countR++;
+            } else if (c == 'I') {
+                countI++;
+            } else if (c == 'E') {
+                countE++;
+            } else if (c == 'N') {
+                countN++;
+            } else if (c == 'D') {
+                countD++;
+            } else if (c == 'S') {
+                countS++;
+            }
+        }
+
+        int totalChars = countF + countR + countI + countE + countN + countD + countS;
+        return (totalChars * 100) / 7;
+    }
+}
