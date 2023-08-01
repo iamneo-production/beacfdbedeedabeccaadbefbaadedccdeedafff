@@ -64,8 +64,8 @@ public static int findSum(int num) {
 }
 
 
-    public static int calculate(String person1, String person2) {
-        String combinedNames = person1.toUpperCase() + person2.toUpperCase();
+    public static int calculate(String myName, String friendName) {
+        String combinedNames = myName.toUpperCase() + friendName.toUpperCase();
         int countF = 0;
         int countR = 0;
         int countI = 0;
@@ -95,5 +95,12 @@ public static int findSum(int num) {
 
         int totalChars = countF + countR + countI + countE + countN + countD + countS;
         return (totalChars * 100) / 7;
+    }
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String myName = sc.nextLine();
+        String friendName = sc.nextLine();
+        int friendshipPercent = calculate(myName, friendName);
+        System.out.println(friendshipPercent);
     }
 }
